@@ -243,26 +243,27 @@ export default function App() {
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
               >
                 <Leaf className="h-4 w-4 text-[var(--copper)]" />
-                Crafted for calm
+                Crafted with care
               </motion.span>
               <div className="max-w-xl space-y-6">
                 <motion.h1
                   className="text-4xl font-extrabold leading-tight md:text-6xl"
-                  animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
+                  animate={{ backgroundPosition: ["0% 50%", "200% 50%"] }}
                   style={{
                     backgroundImage:
                       "linear-gradient(120deg, #F3EFE8 0%, #F3EFE8 45%, rgba(184,107,54,0.85) 50%, #F3EFE8 55%, #F3EFE8 100%)",
+                    backgroundSize: "200% 100%",
                     backgroundClip: "text",
                     WebkitBackgroundClip: "text",
                     color: "transparent"
                   }}
-                  transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
+                  transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
                 >
                   Nature's Designs
                   <span className="text-[var(--copper)]"> Crafted with Code.</span>
                 </motion.h1>
                 <p className="text-lg text-white/80">
-                  We are a small team crafting resilient applications with the patience of hand
+                  We are a small team crafting thoughtful applications with the patience of hand
                   tools and the precision of modern engineering disciplines.
                 </p>
               </div>
@@ -305,7 +306,7 @@ export default function App() {
               initial={{ opacity: 0, scale: 0.92 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.15, duration: 0.7, ease: "easeOut" }}
-              className="group relative overflow-hidden rounded-[32px] border border-white/10 bg-[var(--bark)]/60 p-8 shadow-[0_30px_80px_rgba(0,0,0,0.35)]"
+              className="group relative overflow-hidden rounded-[32px] border border-white/10 bg-[var(--bark)]/60 p-6 shadow-[0_30px_80px_rgba(0,0,0,0.35)] sm:p-8"
             >
               <motion.div
                 className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.14),transparent_65%)] opacity-70"
@@ -329,12 +330,12 @@ export default function App() {
                   {[Code2, Hammer, CircuitBoard].map((Icon, index) => (
                     <motion.div
                       key={index}
-                      className="flex items-center gap-3 rounded-2xl border border-white/10 bg-black/20 p-4"
+                      className="flex items-start gap-3 rounded-2xl border border-white/10 bg-black/20 p-3 sm:p-4"
                       whileHover={{ y: -6, scale: 1.02 }}
                       transition={{ type: "spring", stiffness: 220, damping: 16 }}
                     >
-                      <Icon className="h-6 w-6 text-[var(--copper)]" />
-                      <span className="text-sm text-white/80">
+                      <Icon className="mt-0.5 h-5 w-5 shrink-0 text-[var(--copper)] sm:h-6 sm:w-6" />
+                      <span className="text-xs leading-relaxed text-white/80 sm:text-sm">
                         {index === 0 && "Product engineering with instrumentation"}
                         {index === 1 && "Design systems crafted for cohesion"}
                         {index === 2 && "Edge-native infrastructure ready for scale"}
@@ -343,15 +344,15 @@ export default function App() {
                   ))}
                 </div>
                 <motion.div
-                  className="flex items-center justify-between rounded-2xl border border-white/10 bg-black/25 p-5"
+                  className="flex flex-col gap-4 rounded-2xl border border-white/10 bg-black/25 p-4 sm:flex-row sm:items-center sm:justify-between sm:p-5"
                   whileHover={{ scale: 1.02 }}
                   transition={{ type: "spring", stiffness: 200, damping: 18 }}
                 >
-                  <div>
-                    <p className="text-xs uppercase tracking-[0.45em] text-white/60">Collaboration</p>
-                    <p className="text-sm text-white/80">Linear . Figma . GitHub . Notion</p>
+                  <div className="min-w-0">
+                    <p className="text-xs uppercase tracking-[0.3em] text-white/60 sm:tracking-[0.45em]">Collaboration</p>
+                    <p className="text-xs text-white/80 sm:text-sm">Linear . Figma . GitHub . Notion</p>
                   </div>
-                  <Button variant="ghost" className="rounded-2xl px-5 py-2 text-xs uppercase tracking-wide">
+                  <Button variant="ghost" className="w-full shrink-0 rounded-2xl px-5 py-2 text-xs uppercase tracking-wide sm:w-auto">
                     Let's talk
                   </Button>
                 </motion.div>
